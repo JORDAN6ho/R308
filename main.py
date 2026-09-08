@@ -66,7 +66,7 @@ class Tasse :
 
 
 class Point :
-    def __int__(self, x : float = 0.0, y : float = 0.0) :
+    def __int__(self, x : float = 0.0, y : float = 0.0) :s
         self.x = x
         self.y = y
         
