@@ -37,10 +37,6 @@ def dictionnaire(**kwargs):
           f"'{seuilliste(24,65,78,12,65,3,4,98,7,12,13,54985)}")
     print(f"mon nombre ne sera pas : {seuilliste(21,54,87,98,65,32,3,31)}")
 
-
-
-
-
 class Tasse :
     attribut : str = "céramique"
     def __init__(self, couleur : str, contenance : float, marque : str ):
@@ -62,20 +58,33 @@ class Tasse :
             del self.contenance
         return contenance
 
-
-
-
 class Point :
-    def __int__(self, x : float = 0.0, y : float = 0.0) :s
+    def __int__(self, x : float = 0.0, y : float = 0.0) :
         self.x = x
         self.y = y
-        
 
+    def __str__(self):
+        return f"{self.x} et {self.y}"
 
+    def distanceCoord(self,a : float,b : float) :
+        return math.sqrt((self.x-a)**2+(self.y-b)**2)
 
+    def distancePoint(self, camarade):
+        return self.distanceCoord(camarade.x,camarade.y)
 
+class Cercle:
+    def __init__(self, rayon, centre = None):
+        if centre is None:
+            centre = Point()
+        self.rayon = rayon
+        self.centre = centre
 
+    def diametre (self) :
+        return 2 * self.rayon
 
+    def surface(self):
+        return 3,14 * self.rayon ** 2
 
-
-
+    def intersection(self, autre):
+        distance = self.centre.distancePoint(autre.centre)
+        return 
