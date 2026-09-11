@@ -32,15 +32,22 @@ class Cercle:
         return 3,14 * self.rayon ** 2
 
     def intersection(self,autre):
-
+        distance = self.centre.distancePoint(autre.centre)
+        if self.rayon - autre.rayon <= distance <= self.rayon + autre.rayon:
+            return True
+        else :
+            return False
 
     def pointInclus(self, p : Point) :
+        
 
 
 if __name__ == "__main__":
+    p1 = Point()
+    p2 = Point()
     c1 = Cercle(5)
     print(c1)
-    Point_c1 = Point(: 2, 3)
+    Point_c1 = Point()
     c2 = Cercle(10,p1)
     print(f"diametre{c2.diametre}")
     print(f"perimetre{c2.perimetre()}")
@@ -53,8 +60,8 @@ class Rectangle:
         self.longueur = longueur
         self.hauteur = hauteur
 
-    def surface(self) :
+    def surfaceRectangle(self) :
         return self.longueur * self.hauteur
 
-    def perimetre(self) :
+    def perimetreRectangle(self) :
         return (self.longueur + self.hauteur)*2
